@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @import url("./style.css");
+    </style>
+    <!-- <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    /> -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Shopping List</h1>
+        <ul>
+          <li>
+            <a>Why?</a>
+          </li>
+          <li>
+            <a>What is it?</a>
+          </li>
+          <li>
+            <a>Info</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div>
+        <div>
+          <img src="images/milk.png" style="width: 35%; height: 35%;" />
+          <img src="images/bread.png" style="width: 35%; height: 35%;" />
+          <img src="images/eggs.png" style="width: 35%; height: 35%;" />
+        </div>
+        <div class="mid">
+          <div class="adding">
+            <input placeholder="Add item" value="" class="itemInput" />
+            <button class="button-options">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <button class="button-add">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="listDiv">
+            <ul class="list">
+              <div class="itemDiv">
+                <li class="itemName">Onion</li>
+                <button class="option-button">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <button class="delete-button">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="itemDiv">
+                <li class="itemName">Banana</li>
+                <button class="option-button">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <button class="delete-button">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <img src="images/cereal.png" style="width: 35%; height: 35%;" />
+          <img src="images/butter.png" style="width: 35%; height: 35%;" />
+          <img src="images/pasta.png" style="width: 35%; height: 35%;" />
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
