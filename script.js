@@ -26,10 +26,14 @@ const addItem = (itemText) => {
   //creating tags
   const item = document.createElement("div");
   const itemName = document.createElement("li");
+  const inputCheckbox = document.createElement("input");
+  const checkbox = document.createElement("span");
   const itemOptionButton = document.createElement("button");
   const deleteButton = document.createElement("button");
   //adding properties
   item.classList.add("itemDiv");
+  inputCheckbox.setAttribute("type", "checkbox");
+  checkbox.classList.add("checkbox");
   itemName.classList.add("itemName");
   itemOptionButton.classList.add("option-button");
   deleteButton.classList.add("delete-button");
@@ -39,6 +43,8 @@ const addItem = (itemText) => {
   deleteButton.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
 
   //inserting into html
+  item.appendChild(inputCheckbox);
+  item.appendChild(checkbox);
   item.appendChild(itemName);
   item.appendChild(itemOptionButton);
   item.appendChild(deleteButton);
@@ -52,6 +58,11 @@ const addItem = (itemText) => {
 const optionsDelete = (e) => {
   if (e.target.classList == "delete-button") e.target.parentElement.remove();
   if (e.target.classList == "option-button") console.log("option");
+  // if (e.target.type == "checkbox")
+  //   e.target.parentElement.style.background = "black";
+  // else {
+  //   console.log(e.target.type);
+  // }
 };
 
 //drag and drop items

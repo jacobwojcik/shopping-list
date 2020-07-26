@@ -5,13 +5,13 @@
 }
 body {
   background-color: rgb(73, 82, 82);
-  /* font-family: "Raleway", sans-serif; */
+  font-family: "Ubuntu", sans-serif;
+  color: white;
 }
 
 header {
   height: 10vh;
-  background-color: rgb(11, 12, 12);
-  color: white;
+  background-color: rgb(87, 238, 17);
   padding: 1em;
   display: flex;
   flex-flow: row wrap;
@@ -33,6 +33,32 @@ header > nav > ul {
   display: flex;
   justify-content: space-around;
 }
+header > nav > ul > li {
+  position: relative;
+}
+header > nav > ul > li > a:hover {
+  cursor: pointer;
+  color: rgb(100, 98, 98);
+}
+.popover {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(192, 187, 187);
+  border-radius: 10px;
+  color: black;
+  padding: 1em;
+  width: 280px;
+  z-index: 10;
+  transition: 500ms;
+  transform: translate3d(-45%, 30%, 0);
+}
+header nav ul li:hover .popover {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(-45%, 10%, 0);
+}
 
 .main {
   background-color: rgb(217, 230, 230);
@@ -49,32 +75,61 @@ header > nav > ul {
   align-items: center;
   justify-content: space-around;
 }
-.main > div > div {
+
+.images-div {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.images-div > div {
+  max-width: 100%;
+  max-height: 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mid {
+  border: 1px solid rgb(11, 235, 11);
+  border-radius: 10px;
   width: 100%;
   height: 100%;
+  display: flex;
   align-items: center;
   justify-content: space-around;
   flex-flow: column;
 }
-
-.mid {
-  border: 1px solid rgb(100, 98, 98);
+.mid > div:first-of-type {
+  width: 100%;
+  color: white;
+  padding: 1em;
+  background-color: rgb(11, 235, 11);
+  text-align: center;
 }
 .adding {
-  height: 20%;
+  height: 30%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 1em;
+  background-color: rgb(11, 235, 11);
 }
 .adding > input {
   font-size: 20px;
   padding: 1em;
   border: none;
+  border-radius: 10px;
   outline: none;
+}
+.adding > div {
+  display: flex;
+  justify-content: space-around;
+}
+.adding > div > button {
+  height: 100%;
 }
 .listDiv {
   height: 80%;
@@ -89,6 +144,7 @@ header > nav > ul {
   display: inline-block;
 }
 .drag-menu {
+  z-index: 30;
   position: absolute;
   top: 0;
   left: 0;
@@ -102,8 +158,57 @@ header > nav > ul {
 li {
   list-style: none;
 }
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  z-index: 1;
+}
+input[type="checkbox"]:hover ~ .checkbox {
+  background-color: rgb(117, 113, 113);
+}
+input[type="checkbox"]:checked ~ .checkbox {
+  background-color: rgb(71, 204, 31);
+}
+input[type="checkbox"]:checked ~ .itemName {
+  text-decoration: line-through;
+  color: black;
+}
+.checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+  transform: translateX(20px);
+}
+
+input[type="checkbox"]:checked ~ .checkbox:after {
+  display: block;
+}
+
+.checkbox:after {
+  width: 5px;
+  height: 10px;
+  left: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.checkbox {
+  height: 20px;
+  width: 20px;
+  border: none;
+  background-color: rgb(173, 143, 143);
+}
+.itemDiv > input {
+  background-color: rgb(36, 146, 209);
+  height: 20px;
+}
 button {
-  padding: 1em;
+  padding: 10px 15px;
   cursor: pointer;
   outline: none;
   border: none;
@@ -119,7 +224,7 @@ button:hover {
   background-color: rgb(6, 159, 230);
 }
 .button-add {
-  background-color: rgb(11, 235, 11);
+  background-color: rgb(9, 156, 9);
 }
 .option-button {
   background-color: rgb(11, 33, 235);
@@ -129,6 +234,7 @@ button:hover {
 }
 
 .itemDiv {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -145,4 +251,20 @@ button:hover {
 .fa-times,
 .fa-ellipsis-v {
   pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: none;
+  }
+  .main {
+    padding: 0;
+  }
+  .images-div {
+    display: none;
+  }
+  .adding > input {
+    font-size: 15px;
+    padding: 0.5em;
+  }
 }
