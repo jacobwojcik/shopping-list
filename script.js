@@ -5,6 +5,8 @@ const optionsButton = document.querySelector(".button-options");
 const itemsList = document.querySelector(".list");
 const imageItems = document.querySelectorAll("img");
 const dragList = document.querySelector(".drag-menu");
+const modalBg = document.querySelector(".modal-bg");
+const modalButton = document.querySelector(".modal-btn");
 
 //LISTENERS
 let itemToAdd;
@@ -15,10 +17,15 @@ inputItem.addEventListener("change", (e) => {
 addButton.addEventListener("click", () => {
   itemToAdd != null ? addItem() : console.log(`Add item first`);
 });
-optionsButton.addEventListener("click", () =>
-  console.log("click options button")
-);
+optionsButton.addEventListener("click", () => {
+  modalBg.classList.add("modal-active");
+  modalBg.classList.remove("modal-close");
+});
 itemsList.addEventListener("click", (e) => optionsDelete(e));
+modalButton.addEventListener("click", () => {
+  modalBg.classList.add("modal-close");
+  modalBg.classList.remove("modal-active");
+});
 
 //FUNCTIONS
 
