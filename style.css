@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(73, 82, 82);
   font-family: "Ubuntu", sans-serif;
   color: white;
 }
@@ -53,6 +52,13 @@ header > nav > ul > li > a:hover {
   z-index: 10;
   transition: 500ms;
   transform: translate3d(-45%, 30%, 0);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: brown;
 }
 header nav ul li:hover .popover {
   visibility: visible;
@@ -260,6 +266,7 @@ button:hover {
   left: 0;
   width: 100%;
   display: none;
+
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -268,12 +275,11 @@ button:hover {
 .modal-active {
   display: flex;
 }
-.modal-close {
-  display: none;
-}
+
 .modal {
-  border: 2px solid red;
-  padding: 1em;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 3em;
   width: 700px;
   height: 400px;
   background-color: white;
@@ -292,7 +298,8 @@ button:hover {
 .options > form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-row-gap: 1em;
+  grid-row-gap: 2em;
+
   width: 100%;
 }
 .options > form > div > input {
@@ -300,13 +307,32 @@ button:hover {
   border: none;
   outline: none;
   border-bottom: 2px solid grey;
+  z-index: 10;
 }
+.options > form > div > input:focus ~ h3,
+.options > form > div > input:valid ~ h3 {
+  transform: translate3d(0, -25px, 0px);
+}
+
 .options > form > div {
   position: relative;
+  padding: 1.5em;
+}
+.options > form > div:last-child {
+  display: flex;
 }
 .options > form > div > h3 {
   position: absolute;
-  top: 0;
+  bottom: 40%;
+  transition: transform 500ms;
+  z-index: 1;
+}
+.category > select {
+  /* display: none; */
+  position: absolute;
+  top: 20%;
+  padding: 1em;
+  right: 20%;
 }
 .description {
   width: 100%;
@@ -315,8 +341,9 @@ button:hover {
   justify-content: center;
 }
 textarea {
-  width: 500px;
-  height: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  outline: none;
 }
 .modal-btn {
   color: black;
@@ -335,5 +362,27 @@ textarea {
   .adding > input {
     font-size: 15px;
     padding: 0.5em;
+  }
+  .mid {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+}
+img {
+  animation: slideIn;
+  animation-duration: 1500ms;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate3d(0, 800px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }

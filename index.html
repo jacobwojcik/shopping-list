@@ -29,13 +29,7 @@
             <a>What is it?</a>
             <div class="popover">
               <p>
-                ascvxxvcvxcvxc sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum
+                As you can see, it's a simple app for making shopping list. Add (drag and drop), personalise, check and remove items.
               </p>
               
           </li>
@@ -43,7 +37,7 @@
             <a>Why?</a>
             <div class="popover">
               <p>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus
+                I've  created it to broaden my knowledge of JavaScript ;)
               </p>
               
             </div>
@@ -51,11 +45,14 @@
           
           <li>
             <a>More Info</a>
-            <div class="popover">
+            <div class="popover" style="text-align: center;padding: 2em;">
               <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                  <a href="https://github/jacobwojcik">Github</a>
+                </p>
+              <p>
+                  <a href="https://linkedin">LinkedIn</a>
               </p>
-              
+            </div>
           </li>
         </ul>
       </nav>
@@ -89,13 +86,11 @@
         <div class="mid">
           <div>
           <h1>Shopping List</h1>
-        </div>
+           </div>
           <div class="adding">
             <input placeholder="Add item" value="" class="itemInput" />
             <div>
-            <button class="button-options">
-              <i class="fas fa-ellipsis-v"></i>
-            </button>
+            
             <button class="button-add">
               <i class="fas fa-plus" aria-hidden="true"></i>
             </button>
@@ -132,6 +127,8 @@
             </ul>
           </div>
         </div>
+
+
         <div class="images-div">
           <div>
             <img
@@ -163,24 +160,34 @@
         <div class="options">
           <form>
             <div>
-            <input/>
+            <input type="number" required="required"/>
             <h3>Quantity</h3>
           </div>
           <div>
-            <input/>
+            <input  required="required"/>
             <h3>Unit</h3>
           </div>
           <div>
-            <input/>
+            <input  required="required"/>
             <h3>Price</h3>
           </div>
-          <div>
+          <div class="category">
+            <h3 >Category</h3>
             <select>
-            <option>Meat</option>
-            <option>Vegetables</option>
+            <option>Bakery</option>
+            <option>Clothes</option>
+            <option>Dairy</option>
+            <option>Drinks</option>
             <option>Fruits</option>
+            <option>Meat</option>
+            <option>Other</option>
+            <option>Vegetables</option>
+            <option>Snacks</option>
+            <option>Other</option>
+           
+            
             </select>
-            <!-- <h3>Category</h3> -->
+            
           </div>
        
           </form>
@@ -188,7 +195,7 @@
         <div class="description">
             <form>
               <h3>Description</h3>
-              <textarea>
+              <textarea  cols="40" rows="3">
                 </textarea>
             </form>
         </div>

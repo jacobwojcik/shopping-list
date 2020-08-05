@@ -1,7 +1,6 @@
 //SELECTORS
 const inputItem = document.querySelector(".itemInput");
 const addButton = document.querySelector(".button-add");
-const optionsButton = document.querySelector(".button-options");
 const itemsList = document.querySelector(".list");
 const imageItems = document.querySelectorAll("img");
 const dragList = document.querySelector(".drag-menu");
@@ -17,13 +16,8 @@ inputItem.addEventListener("change", (e) => {
 addButton.addEventListener("click", () => {
   itemToAdd != null ? addItem() : console.log(`Add item first`);
 });
-optionsButton.addEventListener("click", () => {
-  modalBg.classList.add("modal-active");
-  modalBg.classList.remove("modal-close");
-});
 itemsList.addEventListener("click", (e) => optionsDelete(e));
 modalButton.addEventListener("click", () => {
-  modalBg.classList.add("modal-close");
   modalBg.classList.remove("modal-active");
 });
 
@@ -64,7 +58,8 @@ const addItem = (itemText) => {
 //handling option and delete buttons
 const optionsDelete = (e) => {
   if (e.target.classList == "delete-button") e.target.parentElement.remove();
-  if (e.target.classList == "option-button") console.log("option");
+  if (e.target.classList == "option-button")
+    modalBg.classList.add("modal-active");
   // if (e.target.type == "checkbox")
   //   e.target.parentElement.style.background = "black";
   // else {
